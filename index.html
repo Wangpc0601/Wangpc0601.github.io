@@ -51,12 +51,20 @@
         p {
             line-height: 1.8;
         }
+        .gallery {
+            text-align: center;
+        }
         .gallery img {
             max-width: 100%;
             height: auto;
             margin-bottom: 10px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .gallery .caption {
+            color: #ff69b4;
+            font-size: 16px;
+            margin-bottom: 20px;
         }
         .video, .music {
             text-align: center;
@@ -88,6 +96,11 @@
             font-size: 40px;
             color: #ff69b4;
             animation: heartBeat 1.5s infinite;
+        }
+        audio {
+            position: fixed;
+            top: 10px;
+            right: 10px;
         }
     </style>
 </head>
@@ -134,17 +147,22 @@
 
         <div id="gallery" class="section">
             <h2>美好回忆</h2>
-            <!-- 在这里添加你们的照片 -->
-            <img src="photo1.jpg" alt="第一次见面">
-            <img src="photo2.jpg" alt="第二次见面">
-            <img src="photo3.jpg" alt="第三次见面">
-            <img src="photo4.jpg" alt="第四次见面">
+            <div class="gallery">
+                <img src="photo1.jpg" alt="第一次见面" width="300" height="200">
+                <div class="caption">第一次见面：在北航食堂吃饺子和盖饭</div>
+                <img src="photo2.jpg" alt="第二次见面" width="300" height="200">
+                <div class="caption">第二次见面：奥森散步，确定关系</div>
+                <img src="photo3.jpg" alt="第三次见面" width="300" height="200">
+                <div class="caption">第三次见面：在北林吃印度菜</div>
+                <img src="photo4.jpg" alt="第四次见面" width="300" height="200">
+                <div class="caption">第四次见面：看电影和聊唐朝历史</div>
+            </div>
         </div>
 
         <div id="video" class="section">
             <h2>我们的瞬间</h2>
             <!-- 在这里添加你们的视频 -->
-            <video controls>
+            <video controls width="100%">
                 <source src="video.mp4" type="video/mp4">
                 您的浏览器不支持视频播放。
             </video>
@@ -165,6 +183,11 @@
     </div>
 
     <div class="heart">❤️</div>
+
+    <audio autoplay loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+    </audio>
 
     <script>
         function showSection(sectionId) {
