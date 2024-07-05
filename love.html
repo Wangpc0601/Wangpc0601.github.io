@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表白网页</title>
+    <style>
+        body {
+            font-family: 'Cursive', 'Comic Sans MS', sans-serif;
+            background-image: url('background.jpg'); /* 使用浪漫背景图像 */
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 182, 193, 0.9); /* 半透明粉色背景 */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: rgba(255, 105, 180, 0.9);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            display: none;
+            margin-bottom: 20px;
+            animation: fadeIn 1s;
+        }
+        .section.active {
+            display: block;
+        }
+        h1, h2, h3 {
+            text-align: center;
+            color: #ff69b4;
+        }
+        p {
+            line-height: 1.8;
+        }
+        .gallery img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .video, .music {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 0;
+            background-color: rgba(255, 105, 180, 0.9);
+            color: #fff;
+            border-radius: 10px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .heart {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 40px;
+            color: #ff69b4;
+            animation: heartBeat 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="#" onclick="showSection('home')">首页</a>
+            <a href="#" onclick="showSection('about')">关于我</a>
+            <a href="#" onclick="showSection('story')">我们的故事</a>
+            <a href="#" onclick="showSection('gallery')">美好回忆</a>
+            <a href="#" onclick="showSection('video')">我们的瞬间</a>
+            <a href="#" onclick="showSection('music')">我们的歌</a>
+        </div>
+
+        <div id="home" class="section active">
+            <h1>欢迎来到我们的故事</h1>
+            <p>亲爱的[女生名字]，欢迎来到这个专属于我们的网页。我希望通过这个网页，与你分享我们的点点滴滴。</p>
+        </div>
+
+        <div id="about" class="section">
+            <h1>亲爱的[女生名字]</h1>
+            <p>我是王鹏超，23岁，双子座，INTJ。</p>
+        </div>
+
+        <div id="story" class="section">
+            <h2>我们的故事</h2>
+            <div class="story">
+                <h3>第一次见面</h3>
+                <p>我们第一次见面是在北航。我们一起在食堂吃了饺子和盖饭，然后在新主楼里打台球游戏，我小胜。我们还在为民楼里谈星象，虽然打篮球未遂，但那是一个愉快的下午。</p>
+            </div>
+            <div class="story">
+                <h3>第二次见面</h3>
+                <p>晚上我骑车带你去奥森，路上出了点小意外，但我们在奥森里散步聊天，确定了进一步的关系。坐在草地上，我们分享了很多心情。回来时，我平稳地把你送回学校，还给你买了头盔。</p>
+            </div>
+            <div class="story">
+                <h3>第三次见面</h3>
+                <p>我们去了你的学习北林，虽然烤肉没排上，但我们吃了神奇的印度菜。吃完后，我们本想去KTV唱歌未遂，但在矿大的操场上，我们一起唱歌，那是美好的夜晚。</p>
+            </div>
+            <div class="story">
+                <h3>第四次见面</h3>
+                <p>这是最有计划的一次见面。我提前买好了电影票，定了餐厅。晚上看完电影的路上，你跟我唠了唐朝历史，你的文采让我印象深刻。</p>
+            </div>
+        </div>
+
+        <div id="gallery" class="section">
+            <h2>美好回忆</h2>
+            <!-- 在这里添加你们的照片 -->
+            <img src="photo1.jpg" alt="第一次见面">
+            <img src="photo2.jpg" alt="第二次见面">
+            <img src="photo3.jpg" alt="第三次见面">
+            <img src="photo4.jpg" alt="第四次见面">
+        </div>
+
+        <div id="video" class="section">
+            <h2>我们的瞬间</h2>
+            <!-- 在这里添加你们的视频 -->
+            <video controls>
+                <source src="video.mp4" type="video/mp4">
+                您的浏览器不支持视频播放。
+            </video>
+        </div>
+
+        <div id="music" class="section">
+            <h2>我们的歌</h2>
+            <!-- 在这里添加你们的音乐 -->
+            <audio controls>
+                <source src="music.mp3" type="audio/mpeg">
+                您的浏览器不支持音频播放。
+            </audio>
+        </div>
+
+        <div class="footer">
+            <p>亲爱的[女生名字]，你愿意和我一起走过未来的每一个日子吗？</p>
+        </div>
+    </div>
+
+    <div class="heart">❤️</div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
